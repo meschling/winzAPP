@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,11 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatMenuModule } from '@angular/material';
+  MatMenuModule
+} from '@angular/material';
+
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './settings/settings.component';
@@ -44,9 +48,10 @@ import { CalculationFormComponent } from './calculation-form/calculation-form.co
     MatCardModule,
     MatMenuModule,
     AppRoutingModule,
+    FlexLayoutModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

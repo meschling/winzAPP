@@ -1,0 +1,9 @@
+.navbar .brand {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .brand:hover {
+  border-bottom: 0.1em solid white;
+  margin-bottom: -0.1em
+}
