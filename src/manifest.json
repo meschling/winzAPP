@@ -1,6 +1,6 @@
 {
-  "name": "vinzApp",
-  "short_name": "vinzApp",
+  "name": "winzApp",
+  "short_name": "winzApp",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
