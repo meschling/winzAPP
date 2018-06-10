@@ -56,6 +56,15 @@ export class DataService {
 
   setLocations(locations: VineyardLocation[]) {
     this.data.locations = locations;
+    // this.messageService.add((new Date()) + "Speichere Weinberg");
     this.save();
+  }
+
+  getMessages() {
+    return this.data.messages;
+  }
+
+  setMessages(messages: string[]) {
+    this.data.messages = messages;
   }
 }

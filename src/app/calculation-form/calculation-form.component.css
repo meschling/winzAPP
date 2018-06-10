@@ -1,0 +1,8 @@
+.calc-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-container > * {
+  width: 100%;
+}

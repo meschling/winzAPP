@@ -1,3 +1,191 @@
-<p>
-  calculation-form works!
-</p>
+<div class="grid-container">
+  <h1 class="mat-h1">Weinberg Stickstoff berechnungsgrundlage</h1>
+
+  <div class="calc-container">
+
+    <div class="button-container">
+      <h2>Rebenwachstum</h2>
+      <button mat-button [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == -30}" (click)="setGrowth(-30)">stark</button>
+      <button mat-button [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == 0}" (click)="setGrowth(0)">ausgeglichen</button>
+      <button mat-button [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == 30}" (click)="setGrowth(30)">schwach</button>
+    </div>
+
+    <div >
+      <h2>Bodenpflege</h2>
+      <h3>Gerade Gasse</h3>
+      <p>Dauerbegrünung mit Nichtleguminose</p><br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(20)" [checked]="cnq != null && cnq.addsNotLegum1 == 20">Einsaat auf im Vorfeld offengehaltenem Boden<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(0)" [checked]="cnq != null && cnq.addsNotLegum1 == 0">Einsaat nach vorherigem Begrünungsumbruch<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(0)">Etablierte Dauerbegrünung<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-15)" [checked]="cnq != null && cnq.addsNotLegum1 == -15">Stören einer Dauerbegrünung<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-20)" [checked]="cnq != null && cnq.addsNotLegum1 == -20">Umbruch nach 5 Jahren<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-40)" [checked]="cnq != null && cnq.addsNotLegum1 == -40">Umbruch nach 10 Jahren<br>
+      <br>
+      <p mat-button >Dauerbegrünung mit Leguminose</p><br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-10)" [checked]="cnq != null && cnq.addsLegum1 == -10">Walzen/Mulchen	ab 50 % Leguminosen-Anteil<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-25)" [checked]="cnq != null && cnq.addsLegum1 == -25">Umbruch	unter 50 % Leguminosen-Anteil<br>
+      <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-50)" [checked]="cnq != null && cnq.addsLegum1 == -50">Umbruch	ab 50 % Leguminosen-Anteil<br>
+      <br>
+      <input type="checkbox" name="offenhaltung1"  [checked]="openAttitude1" (click)="!openAttitude1 ? setOpenAttitude1(-10): setOpenAttitude1(0)">Offenhalten über Sommer<br>
+      <input type="checkbox" name="abdeckung1"  [checked]="cover1" (click)="!cover1 ? setCover1(-10): setCover1(0)">Abdeckung zur Schonung der Bodenwasservorräte (Rinde, Stroh, Holzhäcksel)<br>
+      <br>
+      <button (click)="setCopyAlley()">Kopiere gerade Gasse in ungerade Gasse</button><br>
+      <h3>Ungerade Gasse</h3>
+      <p>Dauerbegrünung mit Nichtleguminose</p><br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(20)" [checked]="cnq != null && cnq.addsNotLegum2 == 20">Einsaat auf im Vorfeld offengehaltenem Boden<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(0)" [checked]="cnq != null && cnq.addsNotLegum2 == 0">Einsaat nach vorherigem Begrünungsumbruch<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(0)">Etablierte Dauerbegrünung<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-15)" [checked]="cnq != null && cnq.addsNotLegum2 == -15">Stören einer Dauerbegrünung<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-20)" [checked]="cnq != null && cnq.addsNotLegum2 == -20">Umbruch nach 5 Jahren<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-40)" [checked]="cnq != null && cnq.addsNotLegum2 == -40">Umbruch nach 10 Jahren<br>
+      <br>
+      <p mat-button >Dauerbegrünung mit Leguminose</p><br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-10)" [checked]="cnq != null && cnq.addsLegum2 == -10">Walzen/Mulchen	ab 50 % Leguminosen-Anteil<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-25)" [checked]="cnq != null && cnq.addsLegum2 == -25">Umbruch	unter 50 % Leguminosen-Anteil<br>
+      <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-50)" [checked]="cnq != null && cnq.addsLegum2 == -50">Umbruch	ab 50 % Leguminosen-Anteil<br>
+      <br>
+      <input type="checkbox" name="offenhaltung2"  [checked]="openAttitude2" (click)="!openAttitude2 ? setOpenAttitude2(-10): setOpenAttitude2(0)">Offenhalten über Sommer<br>
+      <input type="checkbox" name="abdeckung2"  [checked]="cover2" (click)="!cover2 ? setCover2(-10): setCover2(0)">Abdeckung zur Schonung der Bodenwasservorräte (Rinde, Stroh, Holzhäcksel)<br>
+      <br>
+
+    </div>
+
+    <div class="button-container">
+      <h2>Traubenertrag</h2>
+      <p>>14 t/ha</p>
+      <mat-slide-toggle [checked]="earnings" (click)="!earnings ? addEarnings(10) : addEarnings(0)">ja</mat-slide-toggle>
+    </div>
+
+    <div >
+      <h2>Organische Düngung</h2>
+
+      <h3>Aktuelles Jahr</h3>
+        <div>
+          <mat-select [(ngModel)]="selectDuengerKompostAkuell">
+            <mat-option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+          </mat-select>
+          <button (click)="addKompostAkuell()">add</button>
+        </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerFestmistAkuell">
+          <mat-option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addFestmistAkuell()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerSonstigesAkuell">
+          <mat-option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addSonstigesAkuell()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerReststoffeAkuell">
+          <mat-option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addReststoffeAkuell()">add</button>
+      </div>
+
+      <div *ngFor="let d of duengerAktuell">
+        {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3) <button (click)="remove(duengerJahr4, d)">entfernen</button>
+      </div>
+
+      <h3>Jahr 2</h3>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerKompostJahr2">
+          <mat-option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addKompostJahr2()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerFestmistJahr2">
+          <mat-option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addFestmistJahr2()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerSonstigesJahr2">
+          <mat-option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addSonstigesJahr2()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerReststoffeJahr2">
+          <mat-option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addReststoffeJahr2()">add</button>
+      </div>
+
+      <div *ngFor="let d of duengerJahr2">
+        {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3) <button (click)="remove(duengerJahr4, d)">entfernen</button>
+      </div>
+
+      <h3>Jahr 3</h3>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerKompostJahr3">
+          <mat-option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addKompostJahr3()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerFestmistJahr3">
+          <mat-option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addFestmistJahr3()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerSonstigesJahr3">
+          <mat-option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addSonstigesJahr3()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerReststoffeJahr3">
+          <mat-option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addReststoffeJahr3()">add</button>
+      </div>
+
+      <div *ngFor="let d of duengerJahr3">
+        {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3) <button (click)="remove(duengerJahr4, d)">entfernen</button>
+      </div>
+
+      <h3>Jahr 4</h3>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerKompostJahr4">
+          <mat-option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addKompostJahr4()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerFestmistJahr4">
+          <mat-option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addFestmistJahr4()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerSonstigesJahr4">
+          <mat-option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addSonstigesJahr4()">add</button>
+      </div>
+      <div>
+        <mat-select [(ngModel)]="selectDuengerReststoffeJahr4">
+          <mat-option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</mat-option>
+        </mat-select>
+        <button (click)="addReststoffeJahr4()">add</button>
+      </div>
+
+        <div *ngFor="let d of duengerJahr4">
+          {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3) <button (click)="remove(duengerJahr4, d)">entfernen</button>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+      <button mat-button (click)="save()">Speichern</button>
+      <button mat-button (click)="cancel()">Abbrechen</button>
+    </div>
+
+  </div>
+
+</div>
