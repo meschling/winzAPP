@@ -64,7 +64,7 @@ export class VineyardFormComponent implements OnInit {
   }
 
   setHumus(humus: number) {
-    this.location.humus = humus;
+    this.location.addsHumus = humus;
   }
 
 }

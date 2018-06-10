@@ -15,7 +15,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Rebsorte" [(ngModel)]="location.variety" type="number">
+      <input matInput placeholder="Rebsorte" [(ngModel)]="location.variety">
     </mat-form-field>
 
     <div class="ground-button-container">
@@ -30,25 +30,25 @@
     </div>
 
     <div class="ground-button-container" *ngIf="location.ground == 0">
-      <button mat-button (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,5 %</button>
-      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">1,5 bis 2,5 %</button>
-      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">über 2,5 %</button>
+      <button mat-button (click)="setHumus(20)" [ngClass]="{'highlight': location.addsHumus == 20}">unter 1,5 %</button>
+      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.addsHumus == 0}">1,5 bis 2,5 %</button>
+      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.addsHumus == -40}">über 2,5 %</button>
     </div>
 
     <div class="ground-button-container" *ngIf="location.ground == 1">
-      <button mat-button (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,8 %</button>
-      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">1,8 bis 3,0 %</button>
-      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">"über 3,0 %</button>
+      <button mat-button (click)="setHumus(20)" [ngClass]="{'highlight': location.addsHumus == 20}">unter 1,8 %</button>
+      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.addsHumus == 0}">1,8 bis 3,0 %</button>
+      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.addsHumus == -40}">"über 3,0 %</button>
     </div>
 
     <div class="ground-button-container" *ngIf="location.ground == 2">
-      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 4,0 %</button>
-      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">über 4,0 %</button>
+      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.addsHumus == 0}">unter 4,0 %</button>
+      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.addsHumus == -40}">über 4,0 %</button>
     </div>
 
     <div class="ground-button-container" *ngIf="location.ground == 3">
-      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 7,0 %</button>
-      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">ab 7,0 %</button>
+      <button mat-button (click)="setHumus(0)" [ngClass]="{'highlight': location.addsHumus == 0}">unter 7,0 %</button>
+      <button mat-button (click)="setHumus(-40)" [ngClass]="{'highlight': location.addsHumus == -40}">ab 7,0 %</button>
     </div>
 
     <div class="button-container">

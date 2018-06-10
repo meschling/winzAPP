@@ -17,7 +17,8 @@ import {
   MatMenuModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSelectModule} from '@angular/material';
+  MatSelectModule, MatSlideToggleModule
+} from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './settings/settings.component';
@@ -26,6 +27,7 @@ import { VineyardDetailsComponent } from './vineyard-details/vineyard-details.co
 import { CalculationFormComponent } from './calculation-form/calculation-form.component';
 import {FormsModule} from "@angular/forms";
 import { VineyardDashboardComponent } from './vineyard-dashboard/vineyard-dashboard.component';
+// import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { VineyardDashboardComponent } from './vineyard-dashboard/vineyard-dashbo
     VineyardDetailsComponent,
     CalculationFormComponent,
     VineyardDashboardComponent,
+    // MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { VineyardDashboardComponent } from './vineyard-dashboard/vineyard-dashbo
     MatInputModule,
     MatSelectModule,
     FormsModule,
+    MatSlideToggleModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
