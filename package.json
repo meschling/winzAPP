@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "cd semantic && gulp build && cd .. && ng build",
+    "build": "ng build",
+    "build_semantic": "cd semantic && gulp build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
   cards = [
     { title: 'Belastung', cols: 2, rows: 1 },
     { title: 'Belastung', cols: 3, rows: 3 },

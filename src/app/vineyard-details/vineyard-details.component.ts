@@ -100,8 +100,6 @@ export class VineyardDetailsComponent implements OnInit {
         }
       }
 
-
-
       return `${result + max} kg N/ha =>
         ${location.area} ha * ${result} kg N/ha = ${location.area * result} =>
         abzüglich organischer Dünger ${lastDung} kg N/ha => ${result - lastDung}`;
