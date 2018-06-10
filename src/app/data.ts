@@ -1,5 +1,6 @@
 export class Settings {
   name: string;
+  firstname: string;
   streetnumber: string;
   postalcity: string;
 }
@@ -16,10 +17,10 @@ export class NitrogenQuery {
   addsLegum2: number;
   addsOpenAttitude2: number;
   addsCover2: number;
-  dungCurrentYear: Dung[];
-  dungYear2: Dung[];
-  dungYear3: Dung[];
-  dungYear4: Dung[];
+  dungCurrentYear:Dung[];
+  dungYear2:Dung[];
+  dungYear3:Dung[];
+  dungYear4:Dung[];
 }
 
 export class VineyardLocation {
@@ -34,7 +35,7 @@ export class VineyardLocation {
 
 export class Ground {
   name: string;
-  humus: Humus[];
+  humus: Humus[]
 }
 
 export class Humus {
@@ -69,178 +70,177 @@ export class Dung {
 export const DUNG: DungCategory = {
   reststoffe: [
     {
-      applicationRate: 0,
-      name: 'Trester 40% TM',
-      unit: 't',
+      name: "Trester 40% TM",
+      unit: "t",
       factor: 7.4,
       current: 10,
       year2: 10,
       year3: 0,
-      year4: 0
-    },
-    {
-      applicationRate: 0,
-      name: 'Trester 40% TM',
-      unit: 'm3',
+      year4: 0,
+      applicationRate: 0
+    }, {
+      name: "Trester 40% TM",
+      unit: "m3",
       factor: 3.7,
       current: 10,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Mosttrub flüssig',
-      unit: 'm3',
+      name: "Mosttrub flüssig",
+      unit: "m3",
       factor: 5,
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Weinhefe flüssig 20% TM',
-      unit: 'm3',
+      name: "Weinhefe flüssig 20% TM",
+      unit: "m3",
       factor: 8,
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Weinhefe filtriert 40% TM',
-      unit: 't',
+      name: "Weinhefe filtriert 40% TM",
+      unit: "t",
       factor: 16,
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Weinhefe filtriert 40% TM',
-      unit: 'm3',
+      name: "Weinhefe filtriert 40% TM",
+      unit: "m3",
       factor: 11,
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Filtrationskieselgur 40% TM',
-      unit: 't',
+      name: "Filtrationskieselgur 40% TM",
+      unit: "t",
       factor: 6.4,
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   sontiges: [
     {
-      applicationRate: 0,
-      name: 'Streuwiese 86% TM',
-      unit: 't',
+      name: "Streuwiese 86% TM",
+      unit: "t",
       factor: 11,
       current: 3,
       year2: 3,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Stroh 90% TM',
-      unit: 't',
+      name: "Stroh 90% TM",
+      unit: "t",
       factor: 5,
       current: 2,
       year2: 0,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   kompost: [
     {
-      applicationRate: 0,
-      name: 'Grünschnittkompost 64% TM',
-      unit: 't',
+      name: "Grünschnittkompost 64% TM",
+      unit: "t",
       factor: 6.5,
       current: 3,
       year2: 4,
       year3: 3,
-      year4: 3
+      year4: 3,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Bioabfallkompost 52% TM',
-      unit: 't',
+      name: "Bioabfallkompost 52% TM",
+      unit: "t",
       factor: 9,
       current: 5,
       year2: 4,
       year3: 3,
-      year4: 3
+      year4: 3,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Holzhäcksel',
-      unit: 't',
+      name: "Holzhäcksel",
+      unit: "t",
       factor: 4,
       current: 0,
       year2: 0,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   festmist: [
     {
-      applicationRate: 0,
-      name: 'Rindermist 25% TM',
-      unit: 't',
+      name: "Rindermist 25% TM",
+      unit: "t",
       factor: 6.5,
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Schweinemist 25% TM',
-      unit: 't',
+      name: "Schweinemist 25% TM",
+      unit: "t",
       factor: 9.8,
       current: 30,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Schafsmist 25% TM',
-      unit: 't',
+      name: "Schafsmist 25% TM",
+      unit: "t",
       factor: 5.5,
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
-      applicationRate: 0,
-      name: 'Pferdemist 25% TM',
-      unit: 't',
+      name: "Pferdemist 25% TM",
+      unit: "t",
       factor: 5,
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
 
     {
-      applicationRate: 0,
-      name: 'Hühnermist 50% TM',
-      unit: 't',
+      name: "Hühnermist 50% TM",
+      unit: "t",
       factor: 22,
       current: 30,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
   ]
 };

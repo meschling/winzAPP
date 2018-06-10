@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {VineyardService} from '../vineyard.service';
 import {VineyardLocation} from '../data';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vineyard-details',
@@ -11,14 +12,18 @@ export class VineyardDetailsComponent implements OnInit {
 
   @Input() location: VineyardLocation;
 
-  constructor(private vineyardService: VineyardService) {
+  constructor(private vineyardService: VineyardService, private router: Router) {
   }
 
   ngOnInit() {
     this.location = this.vineyardService.getVineyardlocation();
+    if (this.location == null) {
+      this.router.navigate(['/vineyard/dashboard']);
+    }
   }
 
 
+<<<<<<< HEAD
   calculated() {
     const location = this.vineyardService.getVineyardlocation();
     const n = this.vineyardService.findMaxNitrogenQuery();
@@ -106,4 +111,7 @@ export class VineyardDetailsComponent implements OnInit {
     }
     return 'N/A';
   }
+=======
+
+>>>>>>> 4d060bdef5d4fe31a0013d8a23560ebe70a4a383
 }

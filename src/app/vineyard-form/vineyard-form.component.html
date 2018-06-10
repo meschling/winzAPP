@@ -26,15 +26,16 @@
     <h2 class="ui header">Hummusanteil</h2>
     <div class="fields">
       <div class="field">
-        <button class="ui button primary" (click)="setGround(0)" [ngClass]="{'highlight': location.ground == 0}">Leichte Böden</button>
+        <button class="ui button" (click)="setGround(0)" [ngClass]="{'primary': location.ground == 0}">Leichte Böden</button>
         <div class="ui" *ngIf="location.ground == 0">
           <button class="ui button  tiny primary" (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,5 %</button>
           <button class="ui button  tiny primary" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">1,5 bis 2,5 %</button>
           <button class="ui button  tiny primary" (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">über 2,5 %</button>
+
         </div>
       </div>
       <div class="field">
-        <button class="ui button secondary" (click)="setGround(1)" [ngClass]="{'highlight': location.ground == 1}">Mittlere bis schwere Böden
+        <button class="ui button" (click)="setGround(1)" [ngClass]="{'primary': location.ground == 1}">Mittlere bis schwere Böden
         </button>
         <div class="ui" *ngIf="location.ground == 1">
           <button class="ui button  tiny secondary" (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,8 %</button>
@@ -43,7 +44,7 @@
         </div>
       </div>
       <div class="field">
-        <button class="ui button positive" (click)="setGround(2)" [ngClass]="{'highlight': location.ground == 2}">Steinhaltige Böden
+        <button class="ui button" (click)="setGround(2)" [ngClass]="{'primary': location.ground == 2}">Steinhaltige Böden
         </button>
         <div class="ui" *ngIf="location.ground == 2">
           <button class="ui button  tiny positive" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 4,0 %</button>
@@ -51,7 +52,7 @@
         </div>
       </div>
       <div class="field">
-        <button class="ui button brown" (click)="setGround(3)" [ngClass]="{'highlight': location.ground == 3}">Skelettreiche Böden
+        <button class="ui button" (click)="setGround(3)" [ngClass]="{'primary': location.ground == 3}">Skelettreiche Böden
         </button>
         <div class="ui" *ngIf="location.ground == 3">
           <button class="ui button  tiny brown" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 7,0 %</button>

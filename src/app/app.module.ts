@@ -14,6 +14,7 @@ import { VineyardDetailsComponent } from './vineyard-details/vineyard-details.co
 import { CalculationFormComponent } from './calculation-form/calculation-form.component';
 import {FormsModule} from '@angular/forms';
 import { VineyardDashboardComponent } from './vineyard-dashboard/vineyard-dashboard.component';
+import { PdfExportViewComponent } from './pdf-export-view/pdf-export-view.component';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MessagesComponent } from './messages/messages.component';
     VineyardDetailsComponent,
     CalculationFormComponent,
     VineyardDashboardComponent,
+    PdfExportViewComponent,
     MessagesComponent,
   ],
   imports: [

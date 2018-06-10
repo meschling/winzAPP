@@ -1,0 +1,45 @@
+<div class="ui container">
+  <h1 class="ui header">PDF Export</h1>
+
+  <div id="pdf-export">
+    <div>
+      <div>
+        Betriebsname: {{data.name}}
+      </div>
+      <div>
+        Strasse Hnr: {{data.streetnumber}}
+      </div>
+      <div>
+        PLZ Ort: {{data.postalcity}}
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>
+          Bezeichner
+        </th>
+        <th>
+          Bemerkung
+        </th>
+        <th>
+          maximal
+        </th>
+        <th>
+          abzüge organisch
+        </th>
+        <th>
+          nachzuführen
+        </th>
+      </tr>
+      <tr *ngFor="let l of locations">
+        <td>{{l.name}}</td>
+        <td>{{l.description}}</td>
+        <td>{{this.vineyardService.getMaxN(l)}}</td>
+        <td>{{this.vineyardService.getOrganicReduce(l)}}</td>
+        <td>{{this.vineyardService.getInputN(l)}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
