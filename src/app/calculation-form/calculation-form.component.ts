@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Dung, DUNG, NitrogenQuery, VineyardLocation} from "../data";
-import {VineyardService} from "../vineyard.service";
-import {DataService} from "../data.service";
-import {Router} from "@angular/router";
+import {Dung, DUNG, NitrogenQuery, VineyardLocation} from '../data';
+import {VineyardService} from '../vineyard.service';
+import {DataService} from '../data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-calculation-form',
@@ -54,11 +54,11 @@ export class CalculationFormComponent implements OnInit {
       this.router.navigate(['/vineyard/dashboard']);
     } else {
       this.cnq = this.findMaxNitrogenQuery();
-      this.openAttitude1 = (this.cnq.addsOpenAttitude1 == -10);
-      this.openAttitude2 = (this.cnq.addsOpenAttitude2 == -10);
-      this.cover1 = (this.cnq.addsCover1 == -10);
-      this.cover2 = (this.cnq.addsCover2 == -10);
-      this.earnings = (this.cnq.addsEarning == 10);
+      this.openAttitude1 = (this.cnq.addsOpenAttitude1 === -10);
+      this.openAttitude2 = (this.cnq.addsOpenAttitude2 === -10);
+      this.cover1 = (this.cnq.addsCover1 === -10);
+      this.cover2 = (this.cnq.addsCover2 === -10);
+      this.earnings = (this.cnq.addsEarning === 10);
       if (this.cnq.dungCurrentYear == null) {
         this.cnq.dungCurrentYear = this.duengerAktuell;
       } else {
@@ -89,8 +89,8 @@ export class CalculationFormComponent implements OnInit {
     if (this.location.histroy == null) {
       this.location.histroy = [];
     }
-    if (this.location.histroy.length == 0) {
-      let n = new NitrogenQuery();
+    if (this.location.histroy.length === 0) {
+      const n = new NitrogenQuery();
       this.location.histroy.push(n);
       return n;
     }

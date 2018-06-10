@@ -1,4 +1,9 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Weinberg Details</h1>
-  Stickstoff {{calculated()}} kg <a mat-button routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
+<div class="ui container">
+  <div class="ui breadcrumb">
+    <a class="section" routerLink="/vineyard/dashboard">Weinberg</a>
+    <div class="divider"> / </div>
+    <div class="active section">{{location.name}}</div>
+  </div>
+  <h1 class="header">Weinberg Details</h1>
+  Stickstoff {{calculated()}} kg <a class="ui button" routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
 </div>
