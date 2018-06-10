@@ -53,7 +53,7 @@ export class VineyardService {
     }
     let n = this.findMaxNitrogenQuery(l);
     if (n != null) {
-      let result = 0;
+      let result = 40;
       if (location.addsHumus) {
         console.log("addsHumus:" + location.addsHumus);
         result += location.addsHumus;
