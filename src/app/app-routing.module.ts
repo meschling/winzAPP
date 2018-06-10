@@ -6,6 +6,7 @@ import { VineyardDetailsComponent} from './vineyard-details/vineyard-details.com
 import { CalculationFormComponent } from './calculation-form/calculation-form.component';
 import {RouterModule, Routes} from '@angular/router';
 import {VineyardDashboardComponent} from "./vineyard-dashboard/vineyard-dashboard.component";
+import {PdfExportViewComponent} from "./pdf-export-view/pdf-export-view.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'vineyard/dashboard', component: VineyardDashboardComponent},
   { path: 'vineyard/details', component: VineyardDetailsComponent},
   { path: 'calc', component: CalculationFormComponent },
+  { path: 'export/pdf', component: PdfExportViewComponent},
 ];
 
 @NgModule({
