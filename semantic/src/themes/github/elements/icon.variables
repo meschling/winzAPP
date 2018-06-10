@@ -1,5 +1,3 @@
-@fontPath: '../../themes/github/assets/fonts';
-@fontName: 'octicons';
 @fallbackSRC: '';
 
 @width: 1em;
