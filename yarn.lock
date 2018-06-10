@@ -202,7 +202,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/service-worker@^6.0.3":
+"@angular/service-worker@^6.0.4":
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-6.0.4.tgz#c9439c482b4bac10d6b1bd08c8245e9eaccd6346"
   dependencies:
