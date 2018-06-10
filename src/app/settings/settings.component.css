@@ -1,0 +1,8 @@
+.settings-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-container > * {
+  width: 100%;
+}
