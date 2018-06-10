@@ -10,12 +10,17 @@
   bottom: 15px;
 }
 
+.dashboard-card-content .row {
+  padding: 1em 0;
+}
+.dashboard-card-content .row span {
+  display:flex;
+  align-items: center; /* Vertical center alignment */
+  justify-content: center; /* Horizontal center alignment */
+}
+
 .more-button {
   position: absolute;
   top: 5px;
   right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
 }

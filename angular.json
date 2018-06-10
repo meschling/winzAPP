@@ -24,12 +24,12 @@
               "src/manifest.json"
             ],
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
+              "semantic/dist/semantic.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "semantic/dist/semantic.min.js"
+            ]
           },
           "configurations": {
             "production": {

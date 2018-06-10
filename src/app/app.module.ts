@@ -17,8 +17,6 @@ import {
   MatMenuModule
 } from '@angular/material';
 
-import {FlexLayoutModule} from '@angular/flex-layout';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './settings/settings.component';
@@ -39,16 +37,7 @@ import { CalculationFormComponent } from './calculation-form/calculation-form.co
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
     AppRoutingModule,
-    FlexLayoutModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [Title],
