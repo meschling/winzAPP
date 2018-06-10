@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
-import {Settings} from "../data";
+import {DataService} from '../data.service';
+import {Settings} from '../data';
 
 @Component({
   selector: 'app-settings',

@@ -14,6 +14,6 @@ export class VineyardDetailsComponent implements OnInit {
 
 
   calculated() {
-    return "N/A";
+    return 'N/A';
   }
 }

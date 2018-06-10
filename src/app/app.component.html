@@ -5,10 +5,21 @@
     <a class=" item" routerLink="/dashboard">
       Dashboard
     </a>
-    <a class="item" routerLink="/vineyard/form">
-      Vineyard Form
-    </a>
-    <a class="item" routerLink="/calc">Calculation Form
+    <div class="ui simple dropdown item">
+        Weinberg
+      <i class="dropdown icon"></i>
+      <div class="ui menu">
+          <a class="item" routerLink="/vineyard/dashboard">
+            Übersicht
+          </a>
+          <a class="item" routerLink="/vineyard/form">
+            Hinzufügen
+          </a>
+      </div>
+    </div>
+
+    <a class="item" routerLink="/calc">
+      Dünger berechnen
     </a>
     <div class="right menu">
       <a class="ui item" routerLink="/settings">
@@ -16,7 +27,6 @@
       </a>
     </div>
   </div>
-  <div class="ui divider"></div>
   <div class="ui container">
       <router-outlet></router-outlet>
   </div>

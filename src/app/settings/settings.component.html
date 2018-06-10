@@ -1,22 +1,62 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Einstellungen</h1>
-
-  <div class="settings-container">
-    <mat-form-field>
-      <input matInput placeholder="Name" [(ngModel)]="settings.name"/>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Straße und Hausnummer" [(ngModel)]="settings.streetnumber">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Postleitzahl und Ort" [(ngModel)]="settings.postalcity">
-    </mat-form-field>
-
-    <div class="button-container">
-      <button mat-button (click)="saveSettings()">Speichern</button>
+<div class="ui container">
+  <form class="ui form">
+    <h1 class="ui header">Einstellungen</h1>
+    <div class="field">
+      <label>Name</label>
+      <div class="two fields">
+        <div class="field">
+          <input type="text" name="shipping[first-name]" placeholder="Vorname" [(ngModel)]="settings.name">
+        </div>
+        <div class="field">
+          <input type="text" name="shipping[last-name]" placeholder="Nachname" [(ngModel)]="settings.name">
+        </div>
+      </div>
+      <label>Straße und Hausnummer</label>
+      <div class="fields">
+        <div class="twelve wide field">
+          <input type="text" name="shipping[address]" placeholder="Straßenname" [(ngModel)]="settings.streetnumber">
+        </div>
+        <div class="four wide field">
+          <input type="text" name="shipping[address-2]" placeholder="Hausnummer" [(ngModel)]="settings.streetnumber">
+        </div>
+      </div>
     </div>
-
-  </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Bundesland</label>
+        <select class="ui fluid dropdown">
+          <option value="">-</option>
+          <option value="SH">Schleswig-Holstein</option>
+          <option value="MW">Mecklenburg Vorpommern</option>
+          <option value="NS">Niedersachsen</option>
+          <option value="BB">Brandenburg</option>
+          <option value="B">Berlin</option>
+          <option value="HH">Hamburg</option>
+          <option value="HB">Bremen</option>
+          <option value="TH">Thüringen</option>
+          <option value="RLP">Rheinland-Pfalz</option>
+          <option value="SL">Saarland</option>
+          <option value="NRW">Nordrhein-Westfalen</option>
+          <option value="SA">Sachsen-Anhalt</option>
+          <option value="S">Sachsen</option>
+          <option value="BY">Bayern</option>
+          <option value="BW">Baden-Würtemberg</option>
+          <option value="HE">Hessen</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Land</label>
+        <div class="ui fluid search selection dropdown">
+          <input type="hidden" name="country">
+          <i class="dropdown icon"></i>
+          <div class="default text">Land auswählen</div>
+          <div class="menu">
+            <div class="item" data-value="de"><i class="de flag"></i>Deutschland</div>
+            <div class="item" data-value="lu"><i class="lu flag"></i>Luxembourg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="ui button" tabindex="0" (click)="saveSettings()">Übernehmen</button>
+  </form>
 </div>

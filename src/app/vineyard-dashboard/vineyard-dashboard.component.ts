@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
-import {VineyardLocation} from "../data";
-import {Router} from "@angular/router";
-import {VineyardService} from "../vineyard.service";
+import {DataService} from '../data.service';
+import {VineyardLocation} from '../data';
+import {Router} from '@angular/router';
+import {VineyardService} from '../vineyard.service';
 
 @Component({
   selector: 'app-vineyard-dashboard',
@@ -17,9 +17,6 @@ export class VineyardDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.locations = this.dataService.getLocations();
-    if (this.locations.length == 0) {
-      this.createVineyardLocation();
-    }
   }
 
   createVineyardLocation() {

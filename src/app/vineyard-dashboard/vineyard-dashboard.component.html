@@ -1,9 +1,40 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Weinberg Übersicht</h1>
+<div class="ui container">
+  <h1 class="ui header">Weinberg Übersicht</h1>
 
-  <button mat-button (click)="createVineyardLocation()">Neuer Weinberg</button>
+  <button class="ui button" (click)="createVineyardLocation()">Neuer Weinberg</button>
 
-  <mat-list>
+<!--  <mat-list>
     <mat-list-item *ngFor="let location of locations" (click)="selectShow(location)"> {{location.name}}<button mat-button (click)="selectEdit(location)">bearbeiten</button></mat-list-item>
-  </mat-list>
+  </mat-list>-->
+
+  <div class="ui middle aligned divided list">
+    <div class="item basic button" *ngFor="let location of locations">
+      <div class="right floated">
+        <button class="ui tiny basic button primary" (click)="selectShow(location)">
+          Ansehen
+        </button>
+        <button class="ui tiny basic button">
+          Bearbeiten
+        </button>
+      </div>
+      <div class="content">
+        <div class="ui header">{{location.name}}</div>
+        <div class="ui form">
+          <div class="inline fields">
+            <div class="field three wide">
+              <label>Größe</label>
+              <div class="ui">{{location.area}} ha</div>
+            </div>
+            <div class="field three wide">
+              <label>Rebsorte</label>
+              <div class="ui">{{location.variety}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
