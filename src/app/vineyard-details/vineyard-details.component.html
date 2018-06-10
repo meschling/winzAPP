@@ -4,6 +4,27 @@
     <div class="divider"> / </div>
     <div class="active section">{{location.name}}</div>
   </div>
+
+  <div class="ui message"*ngIf="this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation()) > 80">
+    <i class="close icon"></i>
+    <div class="header">
+      Einstellungen prüfen
+    </div>
+    <p>Achtung: Gesetzlicher Maximalwert wird überschritten. (80 kg N/ha)</p>
+  </div>
+
+
   <h1 class="header">Weinberg Details</h1>
-  Stickstoff {{calculated()}} kg <a class="ui button" routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
+  <a class="ui button" routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
+  <a class="ui button" routerLink="/export/pdf">PDF Export</a>
+  <div>
+    N maximal: {{this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation())}} kg N / ha
+
+  </div>
+  <div>
+    abzüglich Organischer Dünger: {{this.vineyardService.getOrganicReduce(this.vineyardService.getVineyardlocation())}} kg N
+  </div>
+  <div>
+    nachzuführen N: {{this.vineyardService.getInputN(this.vineyardService.getVineyardlocation())}} kg N
+  </div>
 </div>
