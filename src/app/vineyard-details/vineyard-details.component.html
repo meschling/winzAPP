@@ -5,7 +5,7 @@
     <div class="active section">{{location.name}}</div>
   </div>
 
-  <div class="ui message"*ngIf="this.getMax() > 80">
+  <div class="ui message"*ngIf="getMaxN() > 80">
     <i class="close icon"></i>
     <div class="header">
       Einstellungen prüfen
@@ -18,13 +18,12 @@
   <a class="ui button" routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
   <a class="ui button" routerLink="/export/pdf">PDF Export</a>
   <div>
-    N maximal: {{this.getMax()}} kg N / ha
-
+    N maximal: {{getMaxN()}} kg N / ha
   </div>
   <div>
-    abzüglich Organischer Dünger: {{this.getMax()}} kg N
+    abzüglich Organischer Dünger: {{getOrganicReduce()}} kg N
   </div>
   <div>
-    nachzuführen N: {{this.getMax()}} kg N
+    nachzuführen N: {{getInputN()}} kg N
   </div>
 </div>

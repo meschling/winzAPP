@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {VineyardService} from '../vineyard.service';
 import {VineyardLocation} from '../data';
-import {Router} from '@angular/router';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vineyard-details',
@@ -22,7 +22,16 @@ export class VineyardDetailsComponent implements OnInit {
     }
   }
 
-  getMax() {
-    return (this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation()));
+
+  getMaxN() {
+    return this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation());
+  }
+
+  getOrganicReduce() {
+    return this.vineyardService.getOrganicReduce(this.vineyardService.getVineyardlocation());
+  }
+
+  getInputN() {
+    return this.vineyardService.getInputN();
   }
 }

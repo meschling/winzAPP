@@ -22,6 +22,10 @@ export class PdfExportViewComponent implements OnInit, AfterViewInit {
 
   }
 
+  ngAfterViewInit() {
+    this.createPdf();
+  }
+
   createPdf() {
     const doc = new jsPDF();
     const elementHandler = {
@@ -38,11 +42,19 @@ export class PdfExportViewComponent implements OnInit, AfterViewInit {
         'width': 320, 'elementHandlers': elementHandler
       });
 
-    doc.save('dataurlnewwindow');
+    doc.save('winzApp-Export');
   }
 
-  ngAfterViewInit() {
-    this.createPdf();
+  getMaxN() {
+    return this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation());
+  }
+
+  getOrganicReduce() {
+    return this.vineyardService.getOrganicReduce(this.vineyardService.getVineyardlocation());
+  }
+
+  getInputN() {
+    return this.vineyardService.getInputN();
   }
 
 }
