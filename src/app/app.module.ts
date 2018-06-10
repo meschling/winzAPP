@@ -15,7 +15,6 @@ import { CalculationFormComponent } from './calculation-form/calculation-form.co
 import {FormsModule} from '@angular/forms';
 import { VineyardDashboardComponent } from './vineyard-dashboard/vineyard-dashboard.component';
 import { PdfExportViewComponent } from './pdf-export-view/pdf-export-view.component';
-import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { MessagesComponent } from './messages/messages.component';
     CalculationFormComponent,
     VineyardDashboardComponent,
     PdfExportViewComponent,
-    MessagesComponent,
   ],
   imports: [
     BrowserModule,

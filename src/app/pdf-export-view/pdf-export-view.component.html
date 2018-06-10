@@ -35,9 +35,9 @@
       <tr *ngFor="let l of locations">
         <td>{{l.name}}</td>
         <td>{{l.description}}</td>
-        <td>{{this.vineyardService.getMaxN(l)}}</td>
-        <td>{{this.vineyardService.getOrganicReduce(l)}}</td>
-        <td>{{this.vineyardService.getInputN(l)}}</td>
+        <td>{{getMaxN()}}</td>
+        <td>{{getOrganicReduce()}}</td>
+        <td>{{getInputN()}}</td>
       </tr>
     </table>
   </div>

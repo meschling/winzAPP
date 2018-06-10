@@ -18,13 +18,12 @@
   <a class="ui button" routerLink="/calc">Berechnungsgrundlage ausfüllen</a>
   <a class="ui button" routerLink="/export/pdf">PDF Export</a>
   <div>
-    N maximal: {{this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation())}} kg N / ha
-
+    N maximal: {{getMaxN()}} kg N / ha
   </div>
   <div>
-    abzüglich Organischer Dünger: {{this.vineyardService.getOrganicReduce(this.vineyardService.getVineyardlocation())}} kg N
+    abzüglich Organischer Dünger: {{getOrganicReduce()}} kg N
   </div>
   <div>
-    nachzuführen N: {{this.vineyardService.getInputN(this.vineyardService.getVineyardlocation())}} kg N
+    nachzuführen N: {{getInputN()}} kg N
   </div>
 </div>

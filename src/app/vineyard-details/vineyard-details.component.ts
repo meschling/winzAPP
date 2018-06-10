@@ -23,5 +23,15 @@ export class VineyardDetailsComponent implements OnInit {
   }
 
 
+  getMaxN() {
+    return this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation());
+  }
 
+  getOrganicReduce() {
+    return this.vineyardService.getOrganicReduce(this.vineyardService.getVineyardlocation());
+  }
+
+  getInputN() {
+    return this.vineyardService.getInputN();
+  }
 }
