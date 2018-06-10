@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
-import {Settings, VineyardLocation} from "../data";
-import {VineyardService} from "../vineyard.service";
+import {DataService} from '../data.service';
+import {Settings, VineyardLocation} from '../data';
+import {VineyardService} from '../vineyard.service';
 import * as jsPDF from 'jspdf';
 
 
@@ -33,16 +33,16 @@ export class PdfExportViewComponent implements OnInit, AfterViewInit {
         return true;
       }
     };
-    const source = window.document.getElementById("pdf-export");
+    const source = window.document.getElementById('pdf-export');
     doc.fromHTML(
       source,
       15,
       15,
       {
-        'width': 320,'elementHandlers': elementHandler
+        'width': 320, 'elementHandlers': elementHandler
       });
 
-    doc.save("winzApp-Export");
+    doc.save('winzApp-Export');
   }
 
   getMaxN() {

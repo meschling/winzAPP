@@ -130,12 +130,12 @@ export class CalculationFormComponent implements OnInit {
 
   setOpenAttitude1(openAttitude1: number) {
     this.cnq.addsOpenAttitude1 = openAttitude1;
-    this.openAttitude1 = (openAttitude1 == -10);
+    this.openAttitude1 = (openAttitude1 === -10);
   }
 
   setCover1(cover1: number) {
     this.cnq.addsCover1 = cover1;
-    this.cover1 = (cover1 == -10);
+    this.cover1 = (cover1 === -10);
   }
 
   setCopyAlley() {
@@ -155,12 +155,12 @@ export class CalculationFormComponent implements OnInit {
 
   setOpenAttitude2(openAttitude2: number) {
     this.cnq.addsOpenAttitude2 = openAttitude2;
-    this.openAttitude2 = (openAttitude2 == -10);
+    this.openAttitude2 = (openAttitude2 === -10);
   }
 
   setCover2(cover2: number) {
     this.cnq.addsCover2 = cover2;
-    this.cover2 = (cover2 == -10);
+    this.cover2 = (cover2 === -10);
   }
 
   addKompostAkuell() {

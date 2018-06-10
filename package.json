@@ -5,10 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build_semantic": "cd semantic && gulp build && cd .. && ng build",
+    "build_semantic": "cd semantic && gulp build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ngsw-config": "node_modules/.bin/ngsw-config dist ngsw-config.json",
+    "ngsw-copy": "cp node_modules/@angular/service-worker/ngsw-worker.js dist/",
+    "build-prod-ngsw": "ng build --prod && npm run ngsw-config && npm run ngsw-copy",
+    "serve-prod-ngsw": "npm run build-prod-ngsw && http-server dist -p 8080"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +28,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.3",
-    "@angular/service-worker": "^6.0.3",
+    "@angular/service-worker": "^6.0.4",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
     "jspdf": "^1.4.1",

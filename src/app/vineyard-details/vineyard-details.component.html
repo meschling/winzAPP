@@ -5,7 +5,7 @@
     <div class="active section">{{location.name}}</div>
   </div>
 
-  <div class="ui message"*ngIf="this.vineyardService.getMaxN(this.vineyardService.getVineyardlocation()) > 80">
+  <div class="ui message"*ngIf="getMaxN() > 80">
     <i class="close icon"></i>
     <div class="header">
       Einstellungen prüfen

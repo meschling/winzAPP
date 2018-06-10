@@ -28,34 +28,35 @@
       <div class="field">
         <button class="ui button" (click)="setGround(0)" [ngClass]="{'primary': location.ground == 0}">Leichte Böden</button>
         <div class="ui" *ngIf="location.ground == 0">
-          <button class="ui button tiny" (click)="setHumus(20)" [ngClass]="{'secondary': location.humus == 20}">unter 1,5 %</button>
-          <button class="ui button tiny" (click)="setHumus(0)" [ngClass]="{'secondary': location.humus == 0}">1,5 bis 2,5 %</button>
-          <button class="ui button tiny" (click)="setHumus(-40)" [ngClass]="{'secondary': location.humus == -40}">über 2,5 %</button>
+          <button class="ui button  tiny primary" (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,5 %</button>
+          <button class="ui button  tiny primary" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">1,5 bis 2,5 %</button>
+          <button class="ui button  tiny primary" (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">über 2,5 %</button>
+
         </div>
       </div>
       <div class="field">
         <button class="ui button" (click)="setGround(1)" [ngClass]="{'primary': location.ground == 1}">Mittlere bis schwere Böden
         </button>
         <div class="ui" *ngIf="location.ground == 1">
-          <button class="ui button tiny" (click)="setHumus(20)" [ngClass]="{'secondary': location.humus == 20}">unter 1,8 %</button>
-          <button class="ui button tiny" (click)="setHumus(0)" [ngClass]="{'secondary': location.humus == 0}">1,8 bis 3,0 %</button>
-          <button class="ui button tiny" (click)="setHumus(-40)" [ngClass]="{'secondary': location.humus == -40}">"über 3,0 %</button>
+          <button class="ui button  tiny secondary" (click)="setHumus(20)" [ngClass]="{'highlight': location.humus == 20}">unter 1,8 %</button>
+          <button class="ui button  tiny secondary" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">1,8 bis 3,0 %</button>
+          <button class="ui button  tiny secondary" (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">"über 3,0 %</button>
         </div>
       </div>
       <div class="field">
         <button class="ui button" (click)="setGround(2)" [ngClass]="{'primary': location.ground == 2}">Steinhaltige Böden
         </button>
         <div class="ui" *ngIf="location.ground == 2">
-          <button class="ui button tiny" (click)="setHumus(0)" [ngClass]="{'secondary': location.humus == 0}">unter 4,0 %</button>
-          <button class="ui button tiny" (click)="setHumus(-40)" [ngClass]="{'secondary': location.humus == -40}">über 4,0 %</button>
+          <button class="ui button  tiny positive" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 4,0 %</button>
+          <button class="ui button  tiny positive" (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">über 4,0 %</button>
         </div>
       </div>
       <div class="field">
         <button class="ui button" (click)="setGround(3)" [ngClass]="{'primary': location.ground == 3}">Skelettreiche Böden
         </button>
         <div class="ui" *ngIf="location.ground == 3">
-          <button class="ui button tiny" (click)="setHumus(0)" [ngClass]="{'secondary': location.humus == 0}">unter 7,0 %</button>
-          <button class="ui button tiny" (click)="setHumus(-40)" [ngClass]="{'secondary': location.humus == -40}">ab 7,0 %</button>
+          <button class="ui button  tiny brown" (click)="setHumus(0)" [ngClass]="{'highlight': location.humus == 0}">unter 7,0 %</button>
+          <button class="ui button  tiny brown" (click)="setHumus(-40)" [ngClass]="{'highlight': location.humus == -40}">ab 7,0 %</button>
         </div>
       </div>
     </div>
@@ -64,11 +65,12 @@
         <button class="ui button red" (click)="cancel()">Abbrechen</button>
       </div>
       <div class="field">
-        <div class="ui buttons">
-          <button class="ui positive button"(click)="save()">Speichern</button>
-          <div class="or" data-text=" "></div>
-          <button class="ui button"(click)="next()">Speichern & Weiter</button>
+        <div class="ui">
+          <button class="ui button"(click)="save()">Speichern</button>
         </div>
+      </div>
+      <div class="field">
+        <button class="ui button"(click)="next()">Speichern & Weiter</button>
       </div>
       <div class="field" *ngIf="!isNewLocation()">
         <button class="ui button red" (click)="delete()">Löschen</button>

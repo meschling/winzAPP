@@ -1,16 +1,47 @@
 <div class="ui container">
-  <h1>Dashboard</h1>
+  <h1 class="header">Dashboard</h1>
 
-  <h2>Gesamt Bedarf</h2>
+  <h2 class="header">Gesamt Bedarf</h2>
+  <div class="divider"></div>
 
-  <div>
-    N maximal: {{getMaxN()}} kg N / ha
-  </div>
-  <div>
-    abzüglich Organischer Dünger: {{getOrganicReduce()}} kg N
-  </div>
-  <div>
-    nachzuführen N: {{getInputN()}} kg N
+  <div class="ui three column grid">
+    <div class="column">
+      <div class="ui card">
+        <div class="content">
+          <div class="header">
+            N Maximal
+          </div>
+          <div class="description">
+            {{getMaxN()}} kg N / ha
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="column">
+      <div class="ui card">
+        <div class="content">
+      <div class="header">
+        Abzüglich Organischer Dünger
+      </div>
+      <div class="description">
+        {{getOrganicReduce()}} kg N
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui card">
+        <div class="content">
+      <div class="header">
+        Nachzuführen N
+      </div>
+      <div class="description">
+        {{getInputN()}} kg N
+      </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

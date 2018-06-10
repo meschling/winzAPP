@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {DataService} from "../data.service";
-import {VineyardService} from "../vineyard.service";
+import {DataService} from '../data.service';
+import {VineyardService} from '../vineyard.service';
 
 @Component({
   selector: 'app-dashboard',
