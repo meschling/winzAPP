@@ -12,4 +12,8 @@ export class VineyardDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  calculated() {
+    return "N/A";
+  }
 }

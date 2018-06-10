@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DataService} from "../data.service";
+import {Settings} from "../data";
 
 @Component({
   selector: 'app-settings',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
+  @Input() settings: Settings;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.settings = this.dataService.getSettings();
+  }
+
+  saveSettings() {
+    this.dataService.setSettings(this.settings);
   }
 
 }

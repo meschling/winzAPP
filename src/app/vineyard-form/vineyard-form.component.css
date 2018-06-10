@@ -1,0 +1,12 @@
+.vineyard-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.vineyard-container > * {
+  width: 100%;
+}
+
+button.highlight {
+  background-color: lightgrey;
+}

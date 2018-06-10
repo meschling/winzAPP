@@ -1,3 +1,22 @@
-<p>
-  settings works!
-</p>
+<div class="grid-container">
+  <h1 class="mat-h1">Einstellungen</h1>
+
+  <div class="settings-container">
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="settings.name"/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Straße und Hausnummer" [(ngModel)]="settings.streetnumber">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Postleitzahl und Ort" [(ngModel)]="settings.postalcity">
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-button (click)="saveSettings()">Speichern</button>
+    </div>
+
+  </div>
+</div>
