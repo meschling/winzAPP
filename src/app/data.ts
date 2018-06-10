@@ -1,5 +1,6 @@
 export class Settings {
   name: string;
+  firstname: string;
   streetnumber: string;
   postalcity: string;
 }
@@ -75,7 +76,8 @@ export const DUNG: DungCategory = {
       current: 10,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }, {
       name: "Trester 40% TM",
       unit: "m3",
@@ -83,7 +85,8 @@ export const DUNG: DungCategory = {
       current: 10,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Mosttrub flüssig",
@@ -92,7 +95,8 @@ export const DUNG: DungCategory = {
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Weinhefe flüssig 20% TM",
@@ -101,7 +105,8 @@ export const DUNG: DungCategory = {
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Weinhefe filtriert 40% TM",
@@ -110,7 +115,8 @@ export const DUNG: DungCategory = {
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Weinhefe filtriert 40% TM",
@@ -119,7 +125,8 @@ export const DUNG: DungCategory = {
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Filtrationskieselgur 40% TM",
@@ -128,7 +135,8 @@ export const DUNG: DungCategory = {
       current: 80,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   sontiges: [
     {
@@ -138,7 +146,8 @@ export const DUNG: DungCategory = {
       current: 3,
       year2: 3,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Stroh 90% TM",
@@ -147,7 +156,8 @@ export const DUNG: DungCategory = {
       current: 2,
       year2: 0,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   kompost: [
     {
@@ -157,7 +167,8 @@ export const DUNG: DungCategory = {
       current: 3,
       year2: 4,
       year3: 3,
-      year4: 3
+      year4: 3,
+      applicationRate: 0
     },
     {
       name: "Bioabfallkompost 52% TM",
@@ -166,7 +177,8 @@ export const DUNG: DungCategory = {
       current: 5,
       year2: 4,
       year3: 3,
-      year4: 3
+      year4: 3,
+      applicationRate: 0
     },
     {
       name: "Holzhäcksel",
@@ -175,7 +187,8 @@ export const DUNG: DungCategory = {
       current: 0,
       year2: 0,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     }],
   festmist: [
     {
@@ -185,7 +198,8 @@ export const DUNG: DungCategory = {
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Schweinemist 25% TM",
@@ -194,7 +208,8 @@ export const DUNG: DungCategory = {
       current: 30,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Schafsmist 25% TM",
@@ -203,7 +218,8 @@ export const DUNG: DungCategory = {
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
     {
       name: "Pferdemist 25% TM",
@@ -212,7 +228,8 @@ export const DUNG: DungCategory = {
       current: 25,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
 
     {
@@ -222,7 +239,8 @@ export const DUNG: DungCategory = {
       current: 30,
       year2: 10,
       year3: 0,
-      year4: 0
+      year4: 0,
+      applicationRate: 0
     },
   ]
 };
