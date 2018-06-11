@@ -19,6 +19,87 @@ export class CalculationFormComponent implements OnInit {
   @Input() cover1: boolean;
   @Input() cover2: boolean;
 
+  @Input() notLeguminoseQuestions = [{
+    name: 'nichtleguminose1',
+    labelText: 'Einsaat auf im Vorfeld offengehaltenem Boden',
+    addingValue: 20,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Einsaat nach vorherigem Begrünungsumbruch',
+    addingValue: 0,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Etablierte Dauerbegrünung',
+    addingValue: 0,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Stören einer Dauerbegrünung',
+    addingValue: -15,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Umbruch nach 5 Jahren',
+    addingValue: -20,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Umbruch nach 10 Jahren',
+    addingValue: -40,
+  }];
+
+  @Input() leguminoseQuestions = [{
+    name: 'nichtleguminose1',
+    labelText: 'Walzen/Mulchen ab 50 % Leguminosen-Anteil',
+    addingValue: -10,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Umbruch unter 50 % Leguminosen-Anteil',
+    addingValue: -25,
+  },{
+    name: 'nichtleguminose1',
+    labelText: 'Umbruch ab 50 % Leguminosen-Anteil',
+    addingValue: -50,
+  }];
+
+  @Input() notLeguminoseQuestions2 = [{
+    name: 'nichtleguminose2',
+    labelText: 'Einsaat auf im Vorfeld offengehaltenem Boden',
+    addingValue: 20,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Einsaat nach vorherigem Begrünungsumbruch',
+    addingValue: 0,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Etablierte Dauerbegrünung',
+    addingValue: 0,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Stören einer Dauerbegrünung',
+    addingValue: -15,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Umbruch nach 5 Jahren',
+    addingValue: -20,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Umbruch nach 10 Jahren',
+    addingValue: -40,
+  }];
+
+  @Input() leguminoseQuestions2 = [{
+    name: 'nichtleguminose2',
+    labelText: 'Walzen/Mulchen ab 50 % Leguminosen-Anteil',
+    addingValue: -10,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Umbruch unter 50 % Leguminosen-Anteil',
+    addingValue: -25,
+  },{
+    name: 'nichtleguminose2',
+    labelText: 'Umbruch ab 50 % Leguminosen-Anteil',
+    addingValue: -50,
+  }];
+
+
   @Input() duenger = DUNG;
 
   @Input() duengerAktuell: Dung[] = [];

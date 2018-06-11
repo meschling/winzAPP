@@ -6,13 +6,13 @@
 
     <div class="ui container">
       <h2 class="header">Rebenwachstum</h2>
-      <button class="ui button" [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == -30}"
+      <button class="ui button" [ngClass]="{'primary': cnq != null && cnq.addsGrowth == -30}"
               (click)="setGrowth(-30)">stark
       </button>
-      <button class="ui button" [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == 0}" (click)="setGrowth(0)">
+      <button class="ui button" [ngClass]="{'primary': cnq != null && cnq.addsGrowth == 0}" (click)="setGrowth(0)">
         ausgeglichen
       </button>
-      <button class="ui button" [ngClass]="{'highlight': cnq != null && cnq.addsGrowth == 30}" (click)="setGrowth(30)">
+      <button class="ui button" [ngClass]="{'primary': cnq != null && cnq.addsGrowth == 30}" (click)="setGrowth(30)">
         schwach
       </button>
     </div>
@@ -21,151 +21,78 @@
 
     <div class="ui container">
       <h3 class="header">Gerade Gasse</h3>
-      <div class="ui grid">
+      <div class="ui grid doubling">
         <div class="eight wide column">
           <h4>Dauerbegrünung mit Nichtleguminose</h4>
           <div class="ui form">
-            <div class="grouped fields">
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input name="example" type="checkbox" name="nichtleguminose1" (click)="setNotLegum1(20)"
-                         [checked]="cnq != null && cnq.addsNotLegum1 == 20"/>
-                  <label>Einsaat auf im Vorfeld offengehaltenem Boden</label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(0)"
-                         [checked]="cnq != null && cnq.addsNotLegum1 == 0">
-                  <label>Einsaat nach vorherigem Begrünungsumbruch</label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(0)">
-                  <label>Etablierte Dauerbegrünung</label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-15)"
-                         [checked]="cnq != null && cnq.addsNotLegum1 == -15"><label>Stören einer Dauerbegrünung</label>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-20)"
-                         [checked]="cnq != null && cnq.addsNotLegum1 == -20">
-                  <label>Umbruch nach 5 Jahren</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox radio">
-                  <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-40)"
-                         [checked]="cnq != null && cnq.addsNotLegum1 == -40"><label>Umbruch nach 10 Jahren</label>
-                </div>
+            <div class="field" *ngFor="let question of notLeguminoseQuestions; let i = index">
+              <div class="ui checkbox radio">
+                <input type="checkbox" name="{{question.name}}" (click)="setNotLegum1(question.addingValue)"
+                       [checked]="cnq != null && cnq.addsNotLegum1 == question.addingValue"
+                       id="not{{question.name+i}}"/>
+                <label for="not{{question.name+i}}">{{question.labelText}}</label>
               </div>
             </div>
           </div>
         </div>
         <div class="eight wide column">
-          <div class="grouped fields">
-            <h4 class="ui">Dauerbegrünung mit Leguminose</h4>
-            <div class="field">
+          <h4 class="ui">Dauerbegrünung mit Leguminose</h4>
+          <div class="ui form">
+            <div class="field" *ngFor="let question of leguminoseQuestions; let i = index">
               <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-10)"
-                       [checked]="cnq != null && cnq.addsLegum1 == -10"><label>Walzen/Mulchen ab 50 %
-                Leguminosen-Anteil</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-25)"
-                       [checked]="cnq != null && cnq.addsLegum1 == -25"><label>Umbruch unter 50 %
-                Leguminosen-Anteil</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose1" (click)="setNotLegum1(-50)"
-                       [checked]="cnq != null && cnq.addsLegum1 == -50"><label>Umbruch ab 50 %
-                Leguminosen-Anteil</label>
-
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="checkbox" name="offenhaltung1" [checked]="openAttitude1"
-                       (click)="!openAttitude1 ? setOpenAttitude1(-10): setOpenAttitude1(0)"><label>Offenhalten über
-                Sommer</label>
-
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="checkbox" name="abdeckung1" [checked]="cover1"
-                       (click)="!cover1 ? setCover1(-10): setCover1(0)"><label>Abdeckung zur Schonung der
-                Bodenwasservorräte
-                (Rinde, Stroh, Holzhäcksel)</label>
+                <input type="checkbox" name="{{question.name}}" (click)="setNotLegum1(question.addingValue)"
+                       [checked]="cnq != null && cnq.addsNotLegum1 == question.addingValue"
+                       id="{{question.name+i}}"/>
+                <label for="{{question.name+i}}">{{question.labelText}}</label>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="ui grid doubling">
+        <div class="eight wide column">
+          <h4>Offenhaltung</h4>
+          <div class="field">
+            <div class="ui checkbox toggle">
+              <input type="checkbox" name="offenhaltung1" [checked]="openAttitude1"
+                     (click)="!openAttitude1 ? setOpenAttitude1(-10): setOpenAttitude1(0)" id="openAttitude1"><label
+              for="openAttitude1">Offenhalten über
+              Sommer</label>
 
-      <div class="ui grid">
+            </div>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <div class="field">
+            <h4>Abdeckung</h4>
+            <div class="ui checkbox toggle">
+              <input type="checkbox" name="abdeckung1" [checked]="cover1"
+                     (click)="!cover1 ? setCover1(-10): setCover1(0)" id="cover1"><label for="cover1">Abdeckung zur
+              Schonung der
+              Bodenwasservorräte
+              (Rinde, Stroh, Holzhäcksel)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui grid doubling">
         <div class="sixteen wide column">
           <button class="ui button" (click)="setCopyAlley()">Kopiere gerade Gasse in ungerade Gasse</button>
         </div>
       </div>
 
       <h3 class="header">Ungerade Gasse</h3>
-      <div class="ui grid">
+      <div class="ui grid doubling">
         <div class="eight wide column">
-          <div class="grouped fields">
+          <div class="ui form">
             <h4 class="header">Dauerbegrünung mit Nichtleguminose</h4>
-
-            <div class="field">
+            <div class="field" *ngFor="let question of notLeguminoseQuestions2; let i = index">
               <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(20)"
-                       [checked]="cnq != null && cnq.addsNotLegum2 == 20"><label>Einsaat auf im Vorfeld
-                offengehaltenem
-                Boden</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(0)"
-                       [checked]="cnq != null && cnq.addsNotLegum2 == 0"><label>Einsaat nach vorherigem
-                Begrünungsumbruch</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(0)"><label>Etablierte
-                Dauerbegrünung</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-15)"
-                       [checked]="cnq != null && cnq.addsNotLegum2 == -15"><label>Stören einer Dauerbegrünung</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-20)"
-                       [checked]="cnq != null && cnq.addsNotLegum2 == -20"><label>Umbruch nach 5 Jahren</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-40)"
-                       [checked]="cnq != null && cnq.addsNotLegum2 == -40"><label>Umbruch nach 10 Jahren</label>
+                <input type="checkbox" name="{{question.name}}" (click)="setNotLegum2(question.addingValue)"
+                       [checked]="cnq != null && cnq.addsNotLegum2 == question.addingValue"
+                       id="ungeradenot{{question.name+i}}"/>
+                <label for="ungeradenot{{question.name+i}}">{{question.labelText}}</label>
               </div>
             </div>
           </div>
@@ -174,199 +101,215 @@
 
         <div class="eight wide column">
           <div class="grouped fields">
-            <h4 class="header">Dauerbegrünung mit Leguminose</h4>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-10)"
-                       [checked]="cnq != null && cnq.addsLegum2 == -10"><label>Walzen/Mulchen ab 50 %
-                Leguminosen-Anteil</label>
+            <div class="ui form">
+              <h4 class="header">Dauerbegrünung mit Leguminose</h4>
+              <div class="field" *ngFor="let question of leguminoseQuestions2; let i = index">
+                <div class="ui checkbox radio">
+                  <input type="checkbox" name="{{question.name}}" (click)="setNotLegum2(question.addingValue)"
+                         [checked]="cnq != null && cnq.addsNotLegum2 == question.addingValue"
+                         id="ungerade{{question.name+i}}"/>
+                  <label for="ungerade{{question.name+i}}">{{question.labelText}}</label>
+                </div>
               </div>
             </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-25)"
-                       [checked]="cnq != null && cnq.addsLegum2 == -25"><label>Umbruch unter 50 %
-                Leguminosen-Anteil</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="radio" name="nichtleguminose2" (click)="setNotLegum2(-50)"
-                       [checked]="cnq != null && cnq.addsLegum2 == -50"><label>Umbruch ab 50 %
-                Leguminosen-Anteil</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox radio">
 
-                <input type="checkbox" name="offenhaltung2" [checked]="openAttitude2"
-                       (click)="!openAttitude2 ? setOpenAttitude2(-10): setOpenAttitude2(0)"><label>Offenhalten über
-                Sommer</label>
-              </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="ui grid doubling">
+        <div class="eight wide column">
+          <div class="field">
+            <h4>Offenthaltung</h4>
+            <div class="ui checkbox toggle">
+              <input type="checkbox" name="offenhaltung2" [checked]="openAttitude2"
+                     (click)="!openAttitude2 ? setOpenAttitude2(-10): setOpenAttitude2(0)" id="openAttitude2"><label
+              for="openAttitude2">Offenhalten über
+              Sommer</label>
             </div>
-            <div class="field">
-              <div class="ui checkbox radio">
-                <input type="checkbox" name="abdeckung2" [checked]="cover2"
-                       (click)="!cover2 ? setCover2(-10): setCover2(0)"><label>Abdeckung zur Schonung der
-                Bodenwasservorräte
-                (Rinde, Stroh, Holzhäcksel)</label>
-              </div>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <div class="field">
+            <h4>Abdeckung</h4>
+            <div class="ui checkbox toggle">
+              <input type="checkbox" name="abdeckung2" [checked]="cover2"
+                     (click)="!cover2 ? setCover2(-10): setCover2(0)" id="cover2"><label for="cover2">Abdeckung zur
+              Schonung der
+              Bodenwasservorräte
+              (Rinde, Stroh, Holzhäcksel)</label>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="ui horizontal divider"></div>
-
-<div class="ui container">
-  <h2 class="header">Traubenertrag</h2>
-  <div class="ui toggle checkbox">
-    <input name="public" type="checkbox" [checked]="earnings"
-           (click)="!earnings ? addEarnings(10) : addEarnings(0)">
-    <label>Ertrag über 14 t/ha</label>
-  </div>
-</div>
-
-<div class="ui container">
-  <h2 class="header">Organische Düngung</h2>
-
-  <h3 class="header">Aktuelles Jahr</h3>
-  <div class="ui selection dropdown fluid">
-
-    <select class="ui dropdown" class="ui dropdown" [(ngModel)]="selectDuengerKompostAkuell">
-      <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addKompostAkuell()">Aktuellen Kompostwert hinzufügen</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerFestmistAkuell">
-      <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addFestmistAkuell()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerSonstigesAkuell">
-      <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addSonstigesAkuell()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerReststoffeAkuell">
-      <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addReststoffeAkuell()">add</button>
-  </div>
-
-  <div *ngFor="let d of duengerAktuell">
-    {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
-    <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
-  </div>
-
-  <h3>Jahr 2</h3>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerKompostJahr2">
-      <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addKompostJahr2()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerFestmistJahr2">
-      <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addFestmistJahr2()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerSonstigesJahr2">
-      <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addSonstigesJahr2()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerReststoffeJahr2">
-      <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addReststoffeJahr2()">add</button>
-  </div>
-
-  <div *ngFor="let d of duengerJahr2">
-    {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
-    <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
-  </div>
-
-  <h3>Jahr 3</h3>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerKompostJahr3">
-      <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addKompostJahr3()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerFestmistJahr3">
-      <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addFestmistJahr3()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerSonstigesJahr3">
-      <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addSonstigesJahr3()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerReststoffeJahr3">
-      <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addReststoffeJahr3()">add</button>
-  </div>
-
-  <div *ngFor="let d of duengerJahr3">
-    {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
-    <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
-  </div>
-
-  <h3>Jahr 4</h3>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerKompostJahr4">
-      <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addKompostJahr4()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerFestmistJahr4">
-      <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addFestmistJahr4()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerSonstigesJahr4">
-      <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addSonstigesJahr4()">add</button>
-  </div>
-  <div>
-    <select class="ui dropdown" [(ngModel)]="selectDuengerReststoffeJahr4">
-      <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
-    </select>
-    <button class="ui button" (click)="addReststoffeJahr4()">add</button>
-  </div>
-
-  <div *ngFor="let d of duengerJahr4">
-    {{d.name}} <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
-    <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
-  </div>
-</div>
 
 
-<div class="ui container">
-  <div class="ui fields">
+  <div class="ui horizontal divider"></div>
+
+  <div class="ui container">
+    <h2 class="header">Traubenertrag</h2>
+    <div class="ui toggle checkbox">
+      <input name="public" type="checkbox" [checked]="earnings"
+             (click)="!earnings ? addEarnings(10) : addEarnings(0)">
+      <label>Ertrag über 14 t/ha</label>
+    </div>
+  </div>
+
+  <div class="ui container">
+    <h2 class="header">Organische Düngung</h2>
+
+    <h3 class="header">Aktuelles Jahr</h3>
     <div class="field">
-      <button class="ui button" (click)="save()">Speichern</button>
+      <div class="ui sub header">Kompost</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerKompostAkuell">
+        <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addKompostAkuell()">hinzufügen</button>
     </div>
     <div class="field">
-      <button class="ui button" (click)="cancel()">Abbrechen</button>
+      <div class="ui sub header">Festmist</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerFestmistAkuell">
+        <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addFestmistAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Reststoffe</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerReststoffeAkuell">
+        <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addReststoffeAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Sonstiges</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerSonstigesAkuell">
+        <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addSonstigesAkuell()">hinzufügen</button>
+    </div>
+
+    <div *ngFor="let d of duengerAktuell">
+      <span>{{d.name}}</span> <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
+      <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
+    </div>
+
+    <h3>Jahr 2</h3>
+    <div class="field">
+      <div class="ui sub header">Kompost</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerKompostJahr2">
+        <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addKompostAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Festmist</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerFestmistJahr2">
+        <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addFestmistAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Reststoffe</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerReststoffeJahr2">
+        <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addReststoffeAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Sonstiges</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerSonstigesJahr2">
+        <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addSonstigesAkuell()">hinzufügen</button>
+    </div>
+
+    <div *ngFor="let d of duengerJahr2">
+      <span>{{d.name}}</span> <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
+      <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
+    </div>
+
+    <h3>Jahr 3</h3>
+    <div class="field">
+      <div class="ui sub header">Kompost</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerKompostJahr3">
+        <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addKompostAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Festmist</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerFestmistJahr3">
+        <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addFestmistAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Reststoffe</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerReststoffeJahr3">
+        <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addReststoffeAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Sonstiges</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerSonstigesJahr3">
+        <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addSonstigesAkuell()">hinzufügen</button>
+    </div>
+
+    <div *ngFor="let d of duengerJahr3">
+      <span>{{d.name}}</span> <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
+      <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
+    </div>
+
+    <h3>Jahr 4</h3>
+    <div class="field">
+      <div class="ui sub header">Kompost</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerKompostJahr4">
+        <option *ngFor="let d of duenger.kompost" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addKompostAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Festmist</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerFestmistJahr4">
+        <option *ngFor="let d of duenger.festmist" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addFestmistAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Reststoffe</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerReststoffeJahr4">
+        <option *ngFor="let d of duenger.reststoffe" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addReststoffeAkuell()">hinzufügen</button>
+    </div>
+    <div class="field">
+      <div class="ui sub header">Sonstiges</div>
+      <select class="ui fluid dropdown" [(ngModel)]="selectDuengerSonstigesJahr4">
+        <option *ngFor="let d of duenger.sontiges" [value]="d">{{d.name}} {{d.unit}}</option>
+      </select>
+      <button class="ui button" (click)="addSonstigesAkuell()">hinzufügen</button>
+    </div>
+
+    <div *ngFor="let d of duengerJahr4">
+      <span>{{d.name}}</span> <input [(ngModel)]="d.applicationRate">{{d.unit}} {{d.factor}}N kg/t(m3)
+      <button class="ui button" (click)="remove(duengerJahr4, d)">entfernen</button>
+    </div>
+  </div>
+
+
+  <div class="ui container">
+    <div class="ui fields">
+      <div class="field">
+        <button class="ui button" (click)="save()">Speichern</button>
+      </div>
+      <div class="field">
+        <button class="ui button" (click)="cancel()">Abbrechen</button>
+      </div>
     </div>
   </div>
 </div>
