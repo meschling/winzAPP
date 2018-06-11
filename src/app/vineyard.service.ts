@@ -111,28 +111,40 @@ export class VineyardService {
   getOrganicReduce(l: VineyardLocation) {
     let lastDung = 0;
     const n = this.findMaxNitrogenQuery(l);
-    for (let i = 0; i < n.dungCurrentYear.length; i++) {
-      const d = n.dungCurrentYear[i];
-      if (d.applicationRate != null) {
-        lastDung += d.applicationRate * d.factor * (d.current / 100);
+    if (n == null){
+      // nothing to calculate
+      return lastDung;
+    }
+    if (n.dungCurrentYear != null) {
+      for (let i = 0; i < n.dungCurrentYear.length; i++) {
+        const d = n.dungCurrentYear[i];
+        if (d.applicationRate != null) {
+          lastDung += d.applicationRate * d.factor * (d.current / 100);
+        }
       }
     }
-    for (let i = 0; i < n.dungYear2.length; i++) {
-      const d = n.dungYear2[i];
-      if (d.applicationRate != null) {
-        lastDung += d.applicationRate * d.factor * (d.year2 / 100);
+    if (n.dungYear2 != null) {
+      for (let i = 0; i < n.dungYear2.length; i++) {
+        const d = n.dungYear2[i];
+        if (d.applicationRate != null) {
+          lastDung += d.applicationRate * d.factor * (d.year2 / 100);
+        }
       }
     }
-    for (let i = 0; i < n.dungYear3.length; i++) {
-      const d = n.dungYear3[i];
-      if (d.applicationRate != null) {
-        lastDung += d.applicationRate * d.factor * (d.year3 / 100);
+    if (n.dungYear3 != null) {
+      for (let i = 0; i < n.dungYear3.length; i++) {
+        const d = n.dungYear3[i];
+        if (d.applicationRate != null) {
+          lastDung += d.applicationRate * d.factor * (d.year3 / 100);
+        }
       }
     }
-    for (let i = 0; i < n.dungYear4.length; i++) {
-      const d = n.dungYear4[i];
-      if (d.applicationRate != null) {
-        lastDung += d[i].applicationRate * d[i].factor * (d.year4 / 100);
+    if (n.dungYear4 != null) {
+      for (let i = 0; i < n.dungYear4.length; i++) {
+        const d = n.dungYear4[i];
+        if (d.applicationRate != null) {
+          lastDung += d[i].applicationRate * d[i].factor * (d.year4 / 100);
+        }
       }
     }
     return lastDung;

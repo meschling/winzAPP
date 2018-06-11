@@ -12,25 +12,31 @@ export class DashboardComponent {
 
   getMaxN() {
     let maxN = 0;
-    for (let i = 0; i < this.dataService.getLocations().length; i++) {
-      maxN += this.vineyardService.getMaxN(this.dataService.getLocations()[i]);
+    if (this.dataService.getLocations() != null) {
+      for (let i = 0; i < this.dataService.getLocations().length; i++) {
+        maxN += this.vineyardService.getMaxN(this.dataService.getLocations()[i]);
+      }
     }
     return maxN;
   }
 
   getOrganicReduce() {
     let organicReduce = 0;
-    for (let i = 0; i < this.dataService.getLocations().length; i++) {
-      organicReduce += this.vineyardService.getOrganicReduce(this.dataService.getLocations()[i]);
+    if (this.dataService.getLocations() != null) {
+      for (let i = 0; i < this.dataService.getLocations().length; i++) {
+        organicReduce += this.vineyardService.getOrganicReduce(this.dataService.getLocations()[i]);
+      }
     }
     return organicReduce;
   }
 
   getInputN() {
     let inputN = 0;
-    for (let i = 0; i < this.dataService.getLocations().length; i++) {
-      this.vineyardService.setVineyardLocation(this.dataService.getLocations()[i]);
-      inputN += this.vineyardService.getInputN();
+    if (this.dataService.getLocations() != null) {
+      for (let i = 0; i < this.dataService.getLocations().length; i++) {
+        this.vineyardService.setVineyardLocation(this.dataService.getLocations()[i]);
+        inputN += this.vineyardService.getInputN();
+      }
     }
     return inputN;
   }
