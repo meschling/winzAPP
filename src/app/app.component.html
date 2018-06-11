@@ -1,21 +1,12 @@
 <div class="ui container">
   <br/>
   <div class="ui stackable container menu">
-    <div class="header item">{{title}}</div>
+    <a class="header item" routerLink="/dashboard">{{title}}</a>
     <a class=" item" routerLink="/dashboard">
       Dashboard
     </a>
-    <div class="ui simple dropdown item">
-        Weinberg
-      <i class="dropdown icon"></i>
-      <div class="ui menu">
-          <a class="item" routerLink="/vineyard/dashboard">
-            Übersicht
-          </a>
-      </div>
-    </div>
-    <a class="item" routerLink="/calc">
-      Dünger berechnen
+    <a class="item" routerLink="/vineyard/dashboard">
+        Übersicht Weinberg
     </a>
     <div class="right menu">
       <a class="ui item" routerLink="/settings">
