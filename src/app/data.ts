@@ -3,6 +3,7 @@ export class Settings {
   firstname: string;
   streetnumber: string;
   postalcity: string;
+  federalState: string;
 }
 
 export class NitrogenQuery {
